@@ -1,0 +1,36 @@
+{
+    "name": "dagasmart/minio",
+    "alias": "素材管理",
+    "description": "用于弥补 MinIO 新版控制台在桶管理、权限管理等方面的不足，提供完整的 Bucket / Object 可视化管理能力。支持桶创建与删除、PUBLIC / PRIVATE / CUSTOM 权限识别与安全切换、文件上传与删除、图片预览及访问 URL 自动生成，适用于企业后台 业务、素材管理等场景。",
+    "type": "library",
+    "keywords": ["bizadmin", "minio", "s3", "storage", "extension"],
+    "homepage": "https://github.com/dagasmart/minio",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Administrator",
+            "email": "dagasmart@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "dagasmart/bizadmin": "*",
+        "aws/aws-sdk-php": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "DagaSmart\\Minio\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "bizadmin": "DagaSmart\\Minio\\MinioServiceProvider",
+        "laravel": {
+            "providers": [
+                "DagaSmart\\Minio\\MinioServiceProvider"
+            ]
+        }
+    }
+}
