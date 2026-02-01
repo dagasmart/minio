@@ -33,7 +33,7 @@ class MinioController extends AdminController
     {
         return amis()->CRUDTable()
             ->syncLocation('')
-            ->api('get:/buckets')
+            ->api('get:/biz/buckets')
             ->headerToolbar([
                 $this->createBucketButton(),
             ])
@@ -56,7 +56,7 @@ class MinioController extends AdminController
             ->actionType('dialog')
             ->dialog(
                 amis()->Dialog()->title('新增 Bucket')->body(
-                    amis()->Form()->api('post:/buckets')->body([
+                    amis()->Form()->api('post:/biz/buckets')->body([
                         amis()->TextControl()
                             ->name('bucket')
                             ->label('桶名称')
@@ -90,7 +90,7 @@ class MinioController extends AdminController
             ->actionType('dialog')
             ->dialog(
                 amis()->Dialog()->title('访问权限')->body(
-                    amis()->Form()->api('put:/buckets/${Name}/access')->body([
+                    amis()->Form()->api('put:/biz/buckets/${Name}/access')->body([
                         amis()->TextControl()->label('桶')->name('Name')->disabled(),
                         amis()->SwitchControl()
                             ->name('access')
@@ -117,7 +117,7 @@ class MinioController extends AdminController
             ->drawer(
                 amis()->Drawer()->title('对象列表')->size('lg')->body([
                     amis()->CRUDTable()
-                        ->api('get:buckets/${Name}/objects')
+                        ->api('get:/biz/buckets/${Name}/objects')
                         ->columns([
                             amis()->Image()
                                 ->enlargeAble('1')
@@ -134,7 +134,7 @@ class MinioController extends AdminController
                                     ->className('text-danger')
                                     ->confirmText('确定删除该文件？')
                                     ->actionType('ajax')
-                                    ->api('delete:buckets/${Name}/objects/${key}'),
+                                    ->api('delete:/biz/buckets/${Name}/objects/${key}'),
                             ]),
                         ]),
                 ])
@@ -152,6 +152,6 @@ class MinioController extends AdminController
             ->className('text-danger')
             ->confirmText('确定删除该桶？')
             ->actionType('ajax')
-            ->api('delete:/buckets/${Name}');
+            ->api('delete:/biz/buckets/${Name}');
     }
 }

@@ -1,8 +1,6 @@
 <?php
 namespace DagaSmart\Minio\Services;
 
-use Aws\S3\S3Client;
-use Aws\Exception\AwsException;
 
 /**
  * MinioService
@@ -19,9 +17,9 @@ use Aws\Exception\AwsException;
 class MinioService
 {
     /**
-     * S3 Client 实例（兼容 MinIO）
+     * Client 实例（兼容 MinIO）
      */
-    protected S3Client $client;
+    protected $client;
 
     /**
      * 构造函数
