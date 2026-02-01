@@ -11,7 +11,7 @@ class MinioController extends AdminController
     /**
      * MinIO 管理首页
      */
-    public function index()
+    public function list()
     {
         return $this->bucket();
     }

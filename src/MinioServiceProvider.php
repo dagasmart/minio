@@ -21,8 +21,8 @@ class MinioServiceProvider extends ServiceProvider
      */
     protected $menu = [
         [
-            'title' => 'MinIO 管理',
-            'url'   => '/minio',
+            'title' => '素材库管理',
+            'url'   => '/biz/minio',
             'icon'  => 'tabler:bucket',
         ],
     ];
@@ -30,7 +30,7 @@ class MinioServiceProvider extends ServiceProvider
     /**
      * 注册服务（配置、容器绑定）
      */
-    public function register()
+    public function register(): void
     {
         parent::register();
 
