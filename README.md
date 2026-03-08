@@ -1,6 +1,6 @@
 # Owl Admin Extension（MinIO）
 
-基于 OwlAdmin 的 MinIO 管理扩展，
+基于 BizAdmin 的 MinIO 管理扩展，
 用于补充新版 MinIO Console 在后台管理场景下的不足。
 
 📦 安装方式：
@@ -26,9 +26,9 @@ MINIO_SECRET_KEY=minioadmin
 ---
 
 
-# 🧪 OwlAdmin 使用示例（ImageControl + MinIO 上传）
+# 🧪 BizAdmin 使用示例（ImageControl + MinIO 上传）
 
-以下示例展示了如何在 **OwlAdmin 表单中使用 AMIS ImageControl**，
+以下示例展示了如何在 **BizAdmin 表单中使用 AMIS ImageControl**，
 将图片直接上传至 MinIO，并返回可访问的图片地址。
 
 ### 表单示例代码
@@ -47,7 +47,7 @@ amis()->ImageControl('image', '图片')
 
 ### 上传流程说明
 
-1. 用户在 OwlAdmin 表单中选择图片
+1. 用户在 BizAdmin 表单中选择图片
 2. AMIS 自动将文件 POST 到：
    ```
    /admin-api/buckets/logo/objects

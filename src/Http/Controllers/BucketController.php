@@ -73,7 +73,7 @@ class BucketController extends AdminController
     /**
      * 删除桶（仅当桶为空时允许）
      *
-     * OwlAdmin 约定 destroy 方法参数为 $ids
+     * BizAdmin 约定 destroy 方法参数为 $ids
      * 这里将其视为 bucket 名称
      */
     public function destroy($ids)
